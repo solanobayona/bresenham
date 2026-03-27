@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica para que funcione en todos los navegadores -->
+    <meta charset="UTF-8">
+    <title>Bresenham Algorithm - Tarea</title>
+    
+    <!-- Estilos para que la página se vea bonita y ordenada -->
+    <style>
+        /* Hace que todo esté centrado y ordenado */
+        body { 
+            font-family: sans-serif; /* Fuente simple y limpia */
+            display: flex; /* Ayuda a organizar los elementos */
+            flex-direction: column; /* Pone los elementos uno debajo del otro */
+            align-items: center; /* Los centra horizontalmente */
+        }
+        
+        /* Estilo del lienzo donde se dibujará la línea */
+        canvas { 
+            border: 2px solid #333; /* Borde negro alrededor del área de dibujo */
+            background-color: #fafafa; /* Fondo gris clarito */
+            margin: 10px; /* Espacio alrededor del canvas */
+        }
+        
+        /* Caja donde van los botones y números de entrada */
+        .controles { 
+            background: #eee; /* Fondo gris */
+            padding: 15px; /* Espacio interno */
+            border-radius: 8px; /* Bordes redondeados */
+        }
+        
+        /* Estilo de la tabla que muestra los puntos */
+        table { 
+            border-collapse: collapse; /* Junta los bordes de las celdas */
+            margin-top: 20px; /* Espacio arriba de la tabla */
+            min-width: 300px; /* Ancho mínimo para que se vea bien */
+        }
+        
+        /* Estilo de las celdas de la tabla */
+        th, td { 
+            border: 1px solid #999; /* Borde gris */
+            padding: 5px 15px; /* Espacio dentro de las celdas */
+            text-align: center; /* Texto centrado */
+        }
+        
+        /* Estilo especial para los encabezados de la tabla */
+        th { 
+            background: #333; /* Fondo oscuro */
+            color: white; /* Texto blanco */
+        }
+    </style>
+</head>
+<body>
+    <!-- Título principal de la página -->
+    <h2>Algoritmo de Líneas de Bresenham</h2>
+    
+    <!-- Zona donde el usuario ingresa los puntos de inicio y fin -->
+    <div class="controles">
+        <!-- Punto inicial (x0, y0) -->
+        <input type="number" id="x0" placeholder="x0" value="2">
+        <input type="number" id="y0" placeholder="y0" value="2">
+        
+        <!-- Punto final (x1, y1) -->
+        <input type="number" id="x1" placeholder="x1" value="15">
+        <input type="number" id="y1" placeholder="y1" value="10">
+        
+        <!-- Botón que al presionarlo dibuja la línea -->
+        <button id="btnDibujar">Trazar Línea</button>
+    </div>
+
+    <!-- Lienzo donde se dibuja la línea (400x400 pixeles) -->
+    <canvas id="canvasBresenham" width="400" height="400"></canvas>
+
+    <!-- Tabla que muestra paso a paso los puntos que va generando el algoritmo -->
+     <table>
+        <thead>
+             <tr>
+                <th>X</th>      <!-- Columna para las coordenadas X -->
+                <th>Y</th>      <!-- Columna para las coordenadas Y -->
+                <th>Error (err)</th>  <!-- Columna para el valor del error (como funciona el algoritmo) -->
+             </tr>
+        </thead>
+        <tbody id="tablaBody"></tbody>  <!-- Aquí se irán agregando los puntos dinámicamente -->
+     </table>
+
+    <!-- Aquí se conecta el archivo JavaScript que tiene la lógica del algoritmo -->
+    <script src="script.js"></script>
+</body>
+</html>
