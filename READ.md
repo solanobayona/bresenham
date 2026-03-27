@@ -18,7 +18,7 @@ cambios invalidarán el trabajo con notas de cero.</b>
  * @param {Function} plot - Función para dibujar el píxel (x, y).
  */
 function bresenham(x0, y0, x1, y1, plot) {
-    // Cálculo de diferenciales y dirección del paso SOLANO
+    // Cálculo de diferenciales y dirección del paso BAYONA
     let dx = Math.abs(x1 - x0);
     let dy = Math.abs(y1 - y0);
     let sx = (x0 < x1) ? 1 : -1;
